@@ -307,6 +307,97 @@ h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
 .ctx a:hover,.ctx a:focus-visible{color:var(--gold-hi);text-decoration-color:var(--gold)}
 @media (max-width:720px){.clist{grid-template-columns:minmax(0,1fr);gap:16px;max-width:360px;margin-top:40px}}
 
+
+/* ===== centered section head ===== */
+.center{text-align:center}.center .tag{justify-content:center}.center .tag:after{content:"";width:34px;height:1px;background:var(--gold)}
+.center .h,.center .lede{margin-left:auto;margin-right:auto}
+/* ===== live workflow canvas (GHL-style builder) ===== */
+.wf{margin:64px auto 0;max-width:1080px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:rgba(7,19,40,.72);box-shadow:0 40px 100px rgba(0,0,0,.45),0 0 0 1px rgba(227,178,60,.12);overflow:hidden;text-align:left}
+.wfbar{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);font-size:13.5px;color:#fff}
+.wfbar b{font-weight:600;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wdots{display:flex;gap:6px}.wdots i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.18)}.wdots i:first-child{background:#E86E5A}.wdots i:nth-child(2){background:#E3B23C}.wdots i:nth-child(3){background:#5CC28A}
+.wpub{display:flex;align-items:center;gap:7px;font:600 11.5px var(--f-mono);letter-spacing:.06em;color:#7FE0A8;padding:5px 10px;border-radius:999px;background:rgba(92,194,138,.12);border:1px solid rgba(92,194,138,.35)}
+.wpub i{width:7px;height:7px;border-radius:50%;background:#5CC28A;box-shadow:0 0 0 0 rgba(92,194,138,.6);animation:wpulse 2s infinite}
+@keyframes wpulse{70%{box-shadow:0 0 0 8px rgba(92,194,138,0)}100%{box-shadow:0 0 0 0 rgba(92,194,138,0)}}
+.wfcv{position:relative;padding:44px 28px 48px;background-image:radial-gradient(rgba(143,180,232,.18) 1px,transparent 1.2px);background-size:22px 22px}
+.wmain,.wjoin{display:flex;flex-direction:column;align-items:center}
+.wn{position:relative;z-index:1;display:flex;align-items:flex-start;gap:12px;width:100%;max-width:360px;padding:12px 14px;border-radius:14px;background:linear-gradient(180deg,#10284D,#0B1F3A);border:1px solid rgba(255,255,255,.12);box-shadow:0 10px 28px rgba(0,0,0,.35);animation-duration:5s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}
+.wn:before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:0 3px 3px 0;background:var(--wc,#8FB4E8)}
+.wic{flex:0 0 36px;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:var(--wc,#8FB4E8);background:color-mix(in srgb,var(--wc,#8FB4E8) 16%,transparent);border:1px solid color-mix(in srgb,var(--wc,#8FB4E8) 40%,transparent)}
+.wic svg{width:19px;height:19px}
+.wtx{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.wtx small{font:600 10px/1.2 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--wc,#8FB4E8)}
+.wtx b{font-size:15px;font-weight:600;color:#fff;line-height:1.3}
+.wtx em{font-style:normal;font-size:12.5px;color:var(--on-navy-dim);line-height:1.4}
+.wok{position:absolute;top:10px;right:10px;width:16px;height:16px;border-radius:50%;border:1px solid rgba(255,255,255,.18)}
+.t-trig{--wc:#E3B23C}.t-ai{--wc:#B79CFF}.t-if{--wc:#F2A07B}.t-crm{--wc:#6FD6B8}.t-act{--wc:#7FB2FF}.t-wait{--wc:#9FB0C8}.t-log{--wc:#E3B23C}.t-err{--wc:#E86E5A}
+@keyframes wl5{0%,22%,100%{border-color:rgba(255,255,255,.12);box-shadow:0 10px 28px rgba(0,0,0,.35)}5%,14%{border-color:var(--wc);box-shadow:0 0 0 4px color-mix(in srgb,var(--wc) 18%,transparent),0 0 34px color-mix(in srgb,var(--wc) 40%,transparent)}}
+@keyframes wl15{0%,8%,100%{border-color:rgba(255,255,255,.12);box-shadow:0 10px 28px rgba(0,0,0,.35)}2%,5%{border-color:var(--wc);box-shadow:0 0 0 4px color-mix(in srgb,var(--wc) 18%,transparent),0 0 34px color-mix(in srgb,var(--wc) 40%,transparent)}}
+.wn[style*="wl15"]{animation-duration:15s}
+@keyframes wlerr{0%,88%,100%{border-color:rgba(232,110,90,.35)}92%,96%{border-color:#E86E5A;box-shadow:0 0 0 4px rgba(232,110,90,.2),0 0 34px rgba(232,110,90,.45)}}
+.t-err{animation-duration:6s!important;border-style:dashed;border-color:rgba(232,110,90,.35)}
+.wchips,.wscore{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.wch{font-size:11px;color:#fff;padding:3px 8px;border-radius:999px;background:rgba(227,178,60,.12);border:1px solid rgba(227,178,60,.3)}
+.wsc{display:flex;align-items:center;gap:6px;font-size:11.5px;color:var(--on-navy);padding:3px 8px 3px 3px;border-radius:999px;background:rgba(183,156,255,.1);border:1px solid rgba(183,156,255,.25)}
+.wsc i{font:700 10px/1 var(--f-mono);font-style:normal;color:#0B1F3A;background:#C9B6FF;border-radius:999px;padding:3px 6px}
+.wc{position:relative;width:2px;height:34px;flex:0 0 auto;margin:0 auto;background:linear-gradient(180deg,rgba(227,178,60,.85) 50%,transparent 0) 0 0/2px 8px;animation:wflow .7s linear infinite}
+.wc i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font:600 13px/1 var(--f-body,inherit);font-style:normal;color:var(--on-navy-dim);background:#0B1F3A;border:1px solid rgba(255,255,255,.18)}
+@keyframes wflow{to{background-position:0 8px}}
+.wbr{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding-top:34px;margin-top:0}
+.wbr:before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;height:34px;border:2px dashed rgba(227,178,60,.7);border-bottom:0;border-radius:16px 16px 0 0}
+.wbr:after{content:"";position:absolute;top:-34px;left:50%;width:2px;height:34px;background:linear-gradient(180deg,rgba(227,178,60,.85) 50%,transparent 0) 0 0/2px 8px;animation:wflow .7s linear infinite}
+.wl{display:flex;flex-direction:column;align-items:center;min-width:0}
+.wlab{position:relative;z-index:1;margin:-12px 0 14px;font:600 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:999px;color:#0B1F3A}
+.la .wlab{background:#6FD6B8}.lb .wlab{background:#7FB2FF}.lc .wlab{background:#F2A07B}
+.wl .wn{max-width:320px}
+.wfill{flex:1 1 34px;min-height:34px}
+.wjoin{position:relative;padding-top:34px}
+.wjoin:before{content:"";position:absolute;top:0;left:16.66%;right:16.66%;height:34px;border:2px dashed rgba(227,178,60,.7);border-top:0;border-radius:0 0 16px 16px}
+.wjoin:after{content:"";position:absolute;top:34px;left:50%;width:2px;height:0}
+.werr{position:absolute;right:28px;top:44px;width:min(300px,30%)}
+.werr .wn{max-width:none}
+.werr:before{content:"watches every step";position:absolute;left:0;right:0;bottom:-26px;text-align:center;font:11px var(--f-mono);letter-spacing:.08em;color:rgba(232,110,90,.85)}
+@media (max-width:1000px){.werr{position:static;width:auto;max-width:360px;margin:0 auto 30px}.werr:before{display:none}.wfcv{display:flex;flex-direction:column}.werr{order:-1}}
+@media (max-width:720px){
+ .wf{margin-left:-6px;margin-right:-6px;border-radius:16px}
+ .wfcv{padding:28px 14px 32px;background-size:18px 18px}
+ .wfbar{font-size:12.5px;padding:10px 12px;gap:10px}
+ .wbr{grid-template-columns:minmax(0,1fr);gap:26px;padding-top:20px}
+ .wbr:before{display:none}.wbr:after{top:-14px;height:34px}
+ .wl{border:1px dashed rgba(255,255,255,.14);border-radius:16px;padding:22px 10px 12px;position:relative}
+ .wlab{position:absolute;top:-11px;left:50%;transform:translateX(-50%);margin:0;white-space:nowrap}
+ .wfill{display:none}
+ .wjoin{padding-top:26px}.wjoin:before{left:50%;right:auto;width:2px;height:26px;border:0;border-radius:0;background:linear-gradient(180deg,rgba(227,178,60,.85) 50%,transparent 0) 0 0/2px 8px;animation:wflow .7s linear infinite}
+ .wn{padding:11px 12px}.wtx b{font-size:14.5px}
+}
+@media (prefers-reduced-motion:reduce){.wn,.wc,.wbr:after,.wpub i{animation:none!important}}
+
+
+/* ===== 10 systems: summary cards left, list right ===== */
+.sysplit{display:grid;grid-template-columns:260px minmax(0,1fr);gap:56px;align-items:center;margin-top:60px}
+.sumc{display:flex;flex-direction:column;gap:16px}
+.sc{display:grid;grid-template-columns:48px 1fr;grid-template-rows:auto auto;column-gap:16px;align-items:center;padding:18px 20px;border-radius:18px;background:rgba(9,24,48,.55);border:1px solid rgba(227,178,60,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.sci{grid-row:1/3;width:48px;height:48px;border-radius:14px;display:grid;place-items:center}
+.sci svg{width:23px;height:23px}
+.s-live{color:#5CC28A;background:rgba(92,194,138,.12);border:1px solid rgba(92,194,138,.35)}
+.s-dep{color:#7FB2FF;background:rgba(127,178,255,.12);border:1px solid rgba(127,178,255,.35)}
+.s-dev{color:var(--gold);background:rgba(227,178,60,.12);border:1px solid rgba(227,178,60,.35)}
+.sc b{font-family:var(--f-display);font-size:44px;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums;text-shadow:0 0 30px rgba(227,178,60,.3)}
+.sc span:last-child{font-size:13.5px;color:var(--on-navy-dim)}
+.sysplit .rows{margin-top:0;gap:12px}
+.sysplit .row{grid-template-columns:42px minmax(0,1.1fr) minmax(0,1.3fr) 48px;gap:16px}
+.sic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:var(--gold);background:radial-gradient(circle at 30% 30%,#1B3D6E,#0B1F3A 70%);border:1px solid rgba(227,178,60,.4)}
+.sic svg{width:20px;height:20px}
+@media (max-width:900px){.sysplit{grid-template-columns:minmax(0,1fr);gap:36px}.sumc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}}
+@media (max-width:720px){
+ .sc{grid-template-columns:1fr;grid-template-rows:auto;justify-items:center;text-align:center;padding:14px 8px;gap:6px}
+ .sci{grid-row:auto;width:38px;height:38px;border-radius:11px}.sci svg{width:19px;height:19px}
+ .sc b{font-size:34px}.sc span:last-child{font-size:11.5px;line-height:1.3}
+ .sysplit .row{grid-template-columns:38px minmax(0,1fr) 44px;gap:6px 12px}
+ .sysplit .row .track2{grid-column:2/-1;grid-row:2}
+ .sic{width:38px;height:38px;grid-row:1/3}
+}
+
 /* ===== design shop ===== */
 .shopbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:40px;padding:10px;border-radius:16px;background:rgba(9,24,48,.5);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);z-index:5}
 .chipsf{display:flex;gap:6px;flex-wrap:wrap;min-width:0}
@@ -675,56 +766,34 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
 </section>
 
 <section class="zone" id="ai">
- <div class="right">
+ <div class="center">
   <div class="tag rv par" data-par="0.04">03 · AI Strategist</div>
   <h2 class="h rv par" data-par="0.06">AI that turns chats <span>into sales.</span></h2>
   <p class="lede rv par" data-par="0.03">AI chat on 5 channels, smart lead scoring, and a sales assistant for the team.</p>
  </div>
- <div class="float-dia rv par" data-from="zoom" data-par="0.04"><svg viewBox="0 0 640 300" font-family="Inter" font-size="11">
- <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0B1F3A"/></marker>
- <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#B8902A"/></marker></defs>
- <text x="10" y="16" font-family="DejaVu Sans Mono" font-size="9.5" fill="#B8902A" letter-spacing="1.5">FRONT DESK AI · CUSTOMER-FACING</text>
- <g>
-  <rect x="10" y="28" width="104" height="132" rx="8" fill="#F6F8FB" stroke="#E4E8EF"/>
-  <text x="62" y="46" text-anchor="middle" font-weight="700" fill="#0B1F3A">Channels</text>
-  <text x="62" y="68" text-anchor="middle" fill="#2A3445">Web chat</text>
-  <text x="62" y="87" text-anchor="middle" fill="#2A3445">Facebook</text>
-  <text x="62" y="106" text-anchor="middle" fill="#2A3445">Instagram</text>
-  <text x="62" y="125" text-anchor="middle" fill="#2A3445">SMS</text>
-  <text x="62" y="144" text-anchor="middle" fill="#2A3445">WhatsApp</text>
- </g>
- <path d="M114 94H148" stroke="#0B1F3A" stroke-width="1.4" marker-end="url(#a)"/>
- <rect x="150" y="60" width="122" height="68" rx="8" fill="#0B1F3A"/>
- <text x="211" y="86" text-anchor="middle" font-weight="700" fill="#fff">Conversation AI</text>
- <text x="211" y="104" text-anchor="middle" fill="#F2D27A">+ AI Employee</text>
- <path d="M272 94H306" stroke="#0B1F3A" stroke-width="1.4" marker-end="url(#a)"/>
- <rect x="308" y="44" width="150" height="100" rx="8" fill="#FBF3DC" stroke="#F0DC9E"/>
- <text x="383" y="64" text-anchor="middle" font-weight="700" fill="#0B1F3A">Meaning-based scoring</text>
- <text x="320" y="84" fill="#2A3445">Generic question</text><text x="446" y="84" text-anchor="end" font-weight="700" fill="#8A6714">+1</text>
- <text x="320" y="102" fill="#2A3445">Real IT problem</text><text x="446" y="102" text-anchor="end" font-weight="700" fill="#8A6714">+3</text>
- <text x="320" y="120" fill="#2A3445">Service question</text><text x="446" y="120" text-anchor="end" font-weight="700" fill="#8A6714">+3</text>
- <text x="320" y="137" fill="#2A3445">Asks for sales</text><text x="446" y="137" text-anchor="end" font-weight="700" fill="#8A6714">MQL</text>
- <path d="M458 76H492" stroke="#0B1F3A" stroke-width="1.4" marker-end="url(#a)"/>
- <rect x="494" y="50" width="136" height="52" rx="8" fill="#0B1F3A"/>
- <text x="562" y="72" text-anchor="middle" font-weight="700" fill="#fff">Central MQL /</text>
- <text x="562" y="89" text-anchor="middle" font-weight="700" fill="#fff">Sales Handoff</text>
- <path d="M458 124H492" stroke="#B8902A" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#g)"/>
- <rect x="494" y="110" width="136" height="36" rx="8" fill="#fff" stroke="#E3B23C"/>
- <text x="562" y="132" text-anchor="middle" fill="#0B1F3A">Existing client → Support</text>
- <line x1="10" y1="182" x2="630" y2="182" stroke="#E4E8EF"/>
- <text x="10" y="204" font-family="DejaVu Sans Mono" font-size="9.5" fill="#B8902A" letter-spacing="1.5">AI SALES ASSISTANT · INTERNAL</text>
- <rect x="10" y="216" width="150" height="64" rx="8" fill="#F6F8FB" stroke="#E4E8EF"/>
- <text x="85" y="242" text-anchor="middle" font-weight="700" fill="#0B1F3A">GoHighLevel</text>
- <text x="85" y="260" text-anchor="middle" fill="#2A3445">API v2 · webhooks</text>
- <path d="M160 248H200" stroke="#0B1F3A" stroke-width="1.4" marker-end="url(#a)"/>
- <rect x="202" y="216" width="170" height="64" rx="8" fill="#0B1F3A"/>
- <text x="287" y="242" text-anchor="middle" font-weight="700" fill="#fff">n8n + AI Gateway</text>
- <text x="287" y="260" text-anchor="middle" fill="#F2D27A">model · tokens · cost logged</text>
- <path d="M372 248H412" stroke="#0B1F3A" stroke-width="1.4" marker-end="url(#a)"/>
- <rect x="414" y="216" width="216" height="64" rx="8" fill="#FBF3DC" stroke="#F0DC9E"/>
- <text x="522" y="242" text-anchor="middle" font-weight="700" fill="#0B1F3A">Salespeople</text>
- <text x="522" y="260" text-anchor="middle" fill="#2A3445">follow-ups, overdue items, next steps</text>
-</svg></div>
+ <div class="wf rv" data-from="zoom">
+ <div class="wfbar"><span class="wdots"><i></i><i></i><i></i></span><b>Front Desk AI · Lead Router</b><span class="wpub"><i></i>Published</span></div>
+ <div class="wfcv">
+  <div class="wmain">
+   <div class="wn t-trig" style="animation-name:wl5;animation-delay:0s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="wtx"><small>Trigger</small><b>New inbound message</b><em>Any of 5 channels</em><span class="wchips"><span class="wch">Web chat</span><span class="wch">Facebook</span><span class="wch">Instagram</span><span class="wch">SMS</span><span class="wch">WhatsApp</span></span></span><span class="wok" aria-hidden="true"></span></div>
+   <div class="wc" aria-hidden="true"><i>+</i></div>
+   <div class="wn t-ai" style="animation-name:wl5;animation-delay:0.6s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.5l-4.2 1.9L12 16l-1.8-4.6L6 9.5l4.2-1.9z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span><span class="wtx"><small>AI action</small><b>Conversation AI replies</b><em>AI Employee answers in seconds, 24/7</em></span><span class="wok" aria-hidden="true"></span></div>
+   <div class="wc" aria-hidden="true"><i>+</i></div>
+   <div class="wn t-ai" style="animation-name:wl5;animation-delay:1.2s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14l4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></svg></span><span class="wtx"><small>AI action</small><b>Score the lead</b><em>Scored on meaning, not keywords</em><span class="wscore"><span class="wsc"><i>+1</i>Generic question</span><span class="wsc"><i>+3</i>Real IT problem</span><span class="wsc"><i>+3</i>Service question</span><span class="wsc"><i>MQL</i>Asks for sales</span></span></span><span class="wok" aria-hidden="true"></span></div>
+   <div class="wc" aria-hidden="true"><i>+</i></div>
+   <div class="wn t-if" style="animation-name:wl5;animation-delay:1.8s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 7v10M16.2 11.2C13 10 9 9 6.8 6.4M16.2 12.8C13 14 9 15 6.8 17.6"/></svg></span><span class="wtx"><small>If / else</small><b>Who is this?</b><em>Route by score and contact type</em></span><span class="wok" aria-hidden="true"></span></div>
+  </div>
+  <div class="wbr">
+   <div class="wl la"><span class="wlab">Ready to buy · MQL</span><div class="wn t-crm" style="animation-name:wl15;animation-delay:2.4s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="11" rx="1"/><rect x="17" y="4" width="4" height="6" rx="1"/></svg></span><span class="wtx"><small>CRM</small><b>Move to MQL stage</b><em>Pipeline updated</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-crm" style="animation-name:wl15;animation-delay:3.0s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M1.5 21a7.5 7.5 0 0 1 15 0"/><path d="M19.5 8v6M16.5 11h6"/></svg></span><span class="wtx"><small>Action</small><b>Hand off to sales</b><em>Assign the right salesperson</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-ai" style="animation-name:wl15;animation-delay:3.6s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="wtx"><small>AI assistant</small><b>AI Sales Assistant</b><em>Follow-ups, overdue items, next steps</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-act" style="animation-name:wl15;animation-delay:4.2s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></span><span class="wtx"><small>Notify</small><b>Alert the team</b><em>Rep gets the lead and summary</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc wfill" aria-hidden="true"></div></div>
+   <div class="wl lb"><span class="wlab">Existing client</span><div class="wn t-act" style="animation-name:wl15;animation-delay:7.4s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4z"/><path d="M14 5v14" stroke-dasharray="2 2"/></svg></span><span class="wtx"><small>Action</small><b>Route to Support</b><em>Not a sales lead</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-crm" style="animation-name:wl15;animation-delay:8.0s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span><span class="wtx"><small>Integration</small><b>Create support ticket</b><em>Logged in the ticket system</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-act" style="animation-name:wl15;animation-delay:8.6s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="wtx"><small>Message</small><b>Confirm to client</b><em>"We are on it" reply</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc wfill" aria-hidden="true"></div></div>
+   <div class="wl lc"><span class="wlab">Still warming up</span><div class="wn t-wait" style="animation-name:wl15;animation-delay:12.4s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="wtx"><small>Wait</small><b>Wait 1 day</b><em>Give them space</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-act" style="animation-name:wl15;animation-delay:13.0s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="wtx"><small>Message</small><b>Nurture follow-up</b><em>SMS + email sequence</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-if" style="animation-name:wl15;animation-delay:13.6s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></span><span class="wtx"><small>Go to</small><b>Re-score on reply</b><em>Back to scoring</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc wfill" aria-hidden="true"></div></div>
+  </div>
+  <div class="wjoin">
+   <div class="wn t-log" style="animation-name:wl5;animation-delay:4.6s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span><span class="wtx"><small>Log</small><b>Log the AI call</b><em>n8n + AI Gateway: model · tokens · cost</em></span><span class="wok" aria-hidden="true"></span></div>
+  </div>
+  <div class="werr"><div class="wn t-err" style="animation-name:wlerr;animation-delay:0s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 8v4M12 16h.01"/></svg></span><span class="wtx"><small>Error catcher</small><b>If any step fails</b><em>I get alerted before the client notices</em></span><span class="wok" aria-hidden="true"></span></div></div>
+ </div>
+</div>
  <div class="quad">
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 10h32a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H22l-9 7v-7H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3z"/><path d="M14 20h20M14 26h12"/></svg></div><h3>5 channels</h3><p>Web, Facebook, Instagram, SMS, WhatsApp.</p></div>
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M27 4L9 28h13l-3 16 20-26H26z"/></svg></div><h3>Smart scoring</h3><p>Real leads go straight to sales.</p></div>
@@ -762,17 +831,19 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
 </section>
 
 <section class="zone" id="dev">
- <div class="right">
+ <div class="center">
   <div class="tag rv par" data-par="0.04">05 · Software Developer</div>
   <h2 class="h rv par" data-par="0.06">10 systems, <span>shipped.</span></h2>
   <p class="lede rv par" data-par="0.03">Full-stack web systems for members, payments, school, records, credit and finance.</p>
  </div>
- <div class="nums">
-  <div class="n rv" data-from="zoom"><b data-count="4">4</b><span>live, in daily use</span></div>
-  <div class="n rv" data-from="zoom"><b data-count="2">2</b><span>deployed</span></div>
-  <div class="n rv" data-from="zoom"><b data-count="4">4</b><span>in testing or build</span></div>
+ <div class="sysplit">
+  <div class="sumc">
+   <div class="sc rv" data-from="left"><span class="sci s-live"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span><b data-count="4">4</b><span>live, in daily use</span></div>
+   <div class="sc rv" data-from="left"><span class="sci s-dep"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c4 2 6 6 6 10l-3 3H9l-3-3c0-4 2-8 6-10z"/><circle cx="12" cy="10" r="2"/><path d="M9 19l-2 2M15 19l2 2M12 19v3"/></svg></span><b data-count="2">2</b><span>deployed</span></div>
+   <div class="sc rv" data-from="left"><span class="sci s-dev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span><b data-count="4">4</b><span>in testing or build</span></div>
+  </div>
+  <div class="rows"><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 0 1 6 5"/></svg></span><div class="nm">MIS Member Portal<small>Live &amp; in daily use</small></div><div class="track2"><i style="width:100%"></i></div><div class="pc">100%</div></div><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></span><div class="nm">SMS Blast Platform<small>Live, used by other departments</small></div><div class="track2"><i style="width:100%"></i></div><div class="pc">100%</div></div><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h4M7 13h10M7 17h6"/><circle cx="16.5" cy="9" r="1.5"/></svg></span><div class="nm">Queuing System<small>Deployed, in daily use</small></div><div class="track2"><i style="width:100%"></i></div><div class="pc">100%</div></div><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M9.5 15.5l2 2 3.5-4"/></svg></span><div class="nm">Event System<small>In use at the Ownership Meeting</small></div><div class="track2"><i style="width:100%"></i></div><div class="pc">100%</div></div><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="nm">Insurance System<small>Deployed, not yet in use</small></div><div class="track2"><i style="width:90%"></i></div><div class="pc">90%</div></div><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2.5l2.2 11h10.6l2.2-8H6.6"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg></span><div class="nm">Online Store<small>Deployed, no users yet</small></div><div class="track2"><i style="width:90%"></i></div><div class="pc">90%</div></div><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/><path d="M22 9v6"/></svg></span><div class="nm">School System<small>Presented, in data testing</small></div><div class="track2"><i style="width:75%"></i></div><div class="pc">75%</div></div><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M8 13h8M8 16h5"/></svg></span><div class="nm">Records System<small>First presentation held</small></div><div class="track2"><i style="width:75%"></i></div><div class="pc">75%</div></div><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19M6 15h4"/></svg></span><div class="nm">Credit System<small>Built, awaiting first presentation</small></div><div class="track2"><i style="width:60%"></i></div><div class="pc">60%</div></div><div class="row rv" data-from="right"><span class="sic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/><path d="M14 7l3-3 3 3"/></svg></span><div class="nm">Finance System<small>Starting, first module handed over</small></div><div class="track2"><i style="width:10%"></i></div><div class="pc">10%</div></div></div>
  </div>
- <div class="rows"><div class="row rv" data-from="left"><div class="nm">MIS Member Portal<small>Live &amp; in daily use</small></div><div class="track2"><i style="width:100%"></i></div><div class="pc">100%</div></div><div class="row rv" data-from="right"><div class="nm">SMS Blast Platform<small>Live, used by other departments</small></div><div class="track2"><i style="width:100%"></i></div><div class="pc">100%</div></div><div class="row rv" data-from="left"><div class="nm">Queuing System<small>Deployed, in daily use</small></div><div class="track2"><i style="width:100%"></i></div><div class="pc">100%</div></div><div class="row rv" data-from="right"><div class="nm">Event System<small>In use at the Ownership Meeting</small></div><div class="track2"><i style="width:100%"></i></div><div class="pc">100%</div></div><div class="row rv" data-from="left"><div class="nm">Insurance System<small>Deployed, not yet in use</small></div><div class="track2"><i style="width:90%"></i></div><div class="pc">90%</div></div><div class="row rv" data-from="right"><div class="nm">Online Store<small>Deployed, no users yet</small></div><div class="track2"><i style="width:90%"></i></div><div class="pc">90%</div></div><div class="row rv" data-from="left"><div class="nm">School System<small>Presented, in data testing</small></div><div class="track2"><i style="width:75%"></i></div><div class="pc">75%</div></div><div class="row rv" data-from="right"><div class="nm">Records System<small>First presentation held</small></div><div class="track2"><i style="width:75%"></i></div><div class="pc">75%</div></div><div class="row rv" data-from="left"><div class="nm">Credit System<small>Built, awaiting first presentation</small></div><div class="track2"><i style="width:60%"></i></div><div class="pc">60%</div></div><div class="row rv" data-from="right"><div class="nm">Finance System<small>Starting, first module handed over</small></div><div class="track2"><i style="width:10%"></i></div><div class="pc">10%</div></div></div>
 </section>
 
 <section class="zone" id="dev-2">
