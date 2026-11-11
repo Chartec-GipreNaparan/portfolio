@@ -406,6 +406,41 @@ h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
 .wbr .t-err{border-style:solid;animation-duration:15s!important}
 .wbr .t-err[style*="wl15"]{animation-name:wl15!important}
 
+
+/* ===== integration map: sources -> brain -> destinations with live data packets ===== */
+.imap{margin:48px auto 0;max-width:1080px}
+.imap .gcap{max-width:none;margin-bottom:14px}
+.imflow{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr) minmax(0,1fr);column-gap:110px;align-items:center;padding:26px 28px;border-radius:20px;border:1px solid rgba(255,255,255,.08);background:rgba(7,19,40,.55);background-image:radial-gradient(rgba(143,180,232,.14) 1px,transparent 1.2px);background-size:22px 22px}
+.imlines{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.imcol,.imhub{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px}
+.imgrid{display:flex;flex-direction:column;gap:10px}
+.imh{font:600 11px/1 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--on-navy-dim);text-align:center;margin-bottom:4px}
+.imn{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:12px;background:linear-gradient(180deg,#10284D,#0B1F3A);border:1px solid rgba(127,178,255,.3);cursor:default;transition:border-color .25s,box-shadow .25s,opacity .25s,transform .25s;outline:none}
+.imi{flex:0 0 32px;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;color:#7FB2FF;background:rgba(127,178,255,.12)}
+.imi svg{width:17px;height:17px}
+.imt{display:flex;flex-direction:column;min-width:0}.imt b{font-size:14px;font-weight:600;color:#fff;line-height:1.25}.imt small{font-size:11.5px;color:var(--on-navy-dim)}
+.dst .imn{border-color:rgba(111,214,184,.32)}.dst .imi{color:#6FD6B8;background:rgba(111,214,184,.12)}
+.dst .imn[data-id=err]{border-color:rgba(232,110,90,.45)}.dst .imn[data-id=err] .imi{color:#E86E5A;background:rgba(232,110,90,.12)}
+.imhub{gap:22px}
+.imn.hub{padding:14px 16px;border-color:rgba(227,178,60,.5);box-shadow:0 0 30px rgba(227,178,60,.12)}
+.imn.hub .imi{flex-basis:40px;width:40px;height:40px;color:var(--gold);background:rgba(227,178,60,.14)}
+.imn.hub .imt b{font-size:16px}
+.imn.main{border-color:var(--gold);box-shadow:0 0 0 4px rgba(227,178,60,.08),0 0 40px rgba(227,178,60,.25)}
+.imbridge{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:-6px}
+.imbridge span{font-size:11.5px;color:var(--on-navy);padding:4px 10px;border-radius:999px;border:1px dashed rgba(227,178,60,.45)}
+.imlines path{fill:none;stroke-width:1.5;transition:opacity .3s,stroke .3s}
+.imlines .e-in{stroke:rgba(127,178,255,.45)}.imlines .e-hub{stroke:rgba(227,178,60,.7);stroke-dasharray:5 5;animation:mdash 1s linear infinite}.imlines .e-out{stroke:rgba(111,214,184,.45)}
+.imlines circle{filter:drop-shadow(0 0 5px currentColor)}
+.imflow.focus .imn{opacity:.35}.imflow.focus .imn.on{opacity:1;border-color:var(--gold-hi);box-shadow:0 0 0 4px rgba(227,178,60,.14),0 0 30px rgba(227,178,60,.35)}
+.imflow.focus .imlines path{opacity:.12}.imflow.focus .imlines path.on{opacity:1;stroke:#FFE7A0;stroke-width:2.2}
+.imflow.focus .imlines circle{opacity:.15}.imflow.focus .imlines circle.on{opacity:1}
+@media (max-width:900px){
+ .imflow{grid-template-columns:minmax(0,1fr);row-gap:64px;padding:22px 14px}
+ .imgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .imhub{max-width:340px;width:100%;margin:0 auto;gap:16px}
+ .imn{padding:8px 9px;gap:8px}.imi{flex-basis:28px;width:28px;height:28px}.imi svg{width:15px;height:15px}
+ .imt b{font-size:12.5px}.imt small{font-size:10.5px}
+}
 /* ===== design shop ===== */
 .shopbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:40px;padding:10px;border-radius:16px;background:rgba(9,24,48,.5);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);z-index:5}
 .chipsf{display:flex;gap:6px;flex-wrap:wrap;min-width:0}
@@ -667,6 +702,24 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
  #sky,.glow{display:none}
 }
 
+/* ===== tighter rhythm between topics ===== */
+.zone{padding-block:clamp(36px,4.2vw,58px)}
+.globe-wrap{margin-top:30px}
+.method{margin-top:72px}
+.mflow{padding-top:76px;margin-top:20px}
+.wf{margin-top:40px}
+.trio{margin-top:48px}
+.sysplit{margin-top:40px}
+.globe-wrap.gw-big .globe{aspect-ratio:1/.9}
+@media (max-width:720px){
+ .zone{padding-block:30px}
+ .imh{align-self:center;background:#0A1A36;padding:5px 10px;border-radius:999px;position:relative;z-index:2}
+ #ai-2 .trio .item{text-align:center;display:flex;flex-direction:column;align-items:center}
+ #ai-2 .trio .item p{margin-left:auto;margin-right:auto}
+ .trio{margin-top:36px;gap:28px}
+ .globe-wrap{margin-top:24px}
+}
+
 /* ===== hero intro: only Gipre and the backdrop first, then everything arrives in sequence ===== */
 @keyframes iPhoto{from{opacity:0;scale:1.12;filter:blur(14px) brightness(.6)}to{opacity:1;scale:1;filter:none}}
 @keyframes iBg{from{opacity:0}to{opacity:1}}
@@ -841,10 +894,33 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="24" cy="11" rx="14" ry="5"/><path d="M10 11v26c0 2.8 6.3 5 14 5s14-2.2 14-5V11M10 24c0 2.8 6.3 5 14 5s14-2.2 14-5"/></svg></div><h3>CRM setup</h3><p>Pipelines, forms, funnels, snapshots.</p></div>
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="34" r="5"/><circle cx="36" cy="34" r="5"/><circle cx="24" cy="12" r="5"/><path d="M17 34h14M21 16l-7 13M27 16l7 13"/></svg></div><h3>Integrations</h3><p>API v2 and verified webhooks.</p></div>
  </div>
- <div class="globe-wrap gw-mid rv" data-from="zoom">
-  <div class="gcap"><span class="tag">Integrations</span><span class="ghint">Drag to spin · hover to connect</span></div>
-  <div class="globe" data-tools='[["GoHighLevel", "a"], ["GHL API v2", "a"], ["Webhooks", "a"], ["n8n", "a"], ["Zapier", "a"], ["Power Automate", "a"], ["ConnectWise", "a"], ["ClickUp", "a"], ["Monday.com", "a"], ["Conversation AI", "a"], ["AI Employee", "a"], ["Claude", "a"], ["ChatGPT", "a"], ["Lead Scoring", "a"], ["Workflows", "a"], ["Pipelines", "a"], ["Error Alerts", "a"], ["Web Chat", "a"], ["SMS", "a"], ["Email", "a"], ["Messenger", "a"], ["Instagram DM", "a"], ["Calendars", "a"], ["Forms", "a"], ["Snapshots", "a"], ["Custom Values", "a"], ["SaaS Rebilling", "a"], ["Reporting", "a"]]' aria-label="Integrations I build"><canvas aria-hidden="true"></canvas></div>
+ <div class="imap rv" data-from="zoom">
+ <div class="gcap"><span class="tag">Integration map</span><span class="ghint">Hover a node to trace its path</span></div>
+ <div class="imflow" id="imap"><svg class="imlines" aria-hidden="true"></svg>
+  <div class="imcol src"><span class="imh">Comes in</span><div class="imgrid">
+   <div class="imn " data-id="form" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span class="imt"><b>Forms &amp; funnels</b><small>Website, surveys</small></span></div>
+   <div class="imn " data-id="soc" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="imt"><b>Facebook &amp; IG</b><small>Messenger, DMs</small></span></div>
+   <div class="imn " data-id="chat" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="imt"><b>Web chat</b><small>Site widget</small></span></div>
+   <div class="imn " data-id="sms" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="imt"><b>SMS &amp; WhatsApp</b><small>2-way texting</small></span></div>
+   <div class="imn " data-id="cal" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="imt"><b>Calendars</b><small>Bookings</small></span></div>
+   <div class="imn " data-id="hin" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2"/><path d="M6 17l3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06"/><path d="M12 6l3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8"/></svg></span><span class="imt"><b>Webhooks in</b><small>Other apps</small></span></div>
+  </div></div>
+  <div class="imhub"><span class="imh">The brain</span>
+   <div class="imn hub" data-id="ai" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.6L18 9.5l-4.2 1.9L12 16l-1.8-4.6L6 9.5l4.2-1.9z"/><path d="M19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span><span class="imt"><b>Conversation AI</b><small>Claude · ChatGPT</small></span></div>
+   <div class="imn hub main" data-id="ghl" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="11" rx="1"/><rect x="17" y="4" width="4" height="6" rx="1"/></svg></span><span class="imt"><b>GoHighLevel</b><small>CRM · pipelines · workflows</small></span></div>
+   <div class="imn hub" data-id="n8n" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 7v10M16.2 11.2C13 10 9 9 6.8 6.4M16.2 12.8C13 14 9 15 6.8 17.6"/></svg></span><span class="imt"><b>n8n</b><small>Logic · AI Gateway · cost log</small></span></div>
+   <div class="imbridge"><span>Zapier</span><span>Power Automate</span><span>REST API v2</span></div>
+  </div>
+  <div class="imcol dst"><span class="imh">Goes out</span><div class="imgrid">
+   <div class="imn " data-id="mail" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="imt"><b>Email &amp; SMS</b><small>Follow-ups</small></span></div>
+   <div class="imn " data-id="cw" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4z"/><path d="M14 5v14" stroke-dasharray="2 2"/></svg></span><span class="imt"><b>ConnectWise</b><small>Support tickets</small></span></div>
+   <div class="imn " data-id="cu" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="imt"><b>ClickUp</b><small>Tasks &amp; SOPs</small></span></div>
+   <div class="imn " data-id="mon" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="11" rx="1"/><rect x="17" y="4" width="4" height="6" rx="1"/></svg></span><span class="imt"><b>Monday.com</b><small>Team boards</small></span></div>
+   <div class="imn " data-id="rep" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14l4-4"/><path d="M3.3 19a10 10 0 1 1 17.4 0"/></svg></span><span class="imt"><b>Reports</b><small>Pipeline &amp; AI cost</small></span></div>
+   <div class="imn " data-id="err" tabindex="0"><span class="imi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span><span class="imt"><b>Error alerts</b><small>To me first</small></span></div>
+  </div></div>
  </div>
+</div>
 </section>
 
 <section class="zone" id="dev">
@@ -1017,6 +1093,36 @@ var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   });
  }
  draw();if(window.ResizeObserver)new ResizeObserver(draw).observe(f);else addEventListener('resize',draw);if(document.fonts)document.fonts.ready.then(draw);
+})();
+
+
+/* ===== integration map: draw links + travelling data packets, hover to trace ===== */
+(function(){var f=document.getElementById('imap');if(!f)return;var svg=f.querySelector('.imlines'),NS='http://www.w3.org/2000/svg',RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var E=[['form','ghl','in'],['soc','ai','in'],['chat','ai','in'],['sms','ai','in'],['cal','ghl','in'],['hin','n8n','in'],['ai','ghl','hub'],['ghl','n8n','hub'],['ghl','mail','out'],['n8n','cw','out'],['n8n','cu','out'],['n8n','mon','out'],['n8n','rep','out'],['n8n','err','out']];
+ var COL={'in':'#7FB2FF','hub':'#E3B23C','out':'#6FD6B8'};
+ function node(id){return f.querySelector('.imn[data-id="'+id+'"]')}
+ function draw(){svg.innerHTML='';var fr=f.getBoundingClientRect(),k=fr.width/f.offsetWidth||1,W=f.offsetWidth,H=f.offsetHeight,mob=getComputedStyle(f).gridTemplateColumns.split(' ').length<2;svg.setAttribute('viewBox','0 0 '+W+' '+H);
+  var hub=f.querySelector('.imhub').getBoundingClientRect();
+  function R(el){var r=el.getBoundingClientRect();return {l:(r.left-fr.left)/k,r:(r.right-fr.left)/k,t:(r.top-fr.top)/k,b:(r.bottom-fr.top)/k,cx:(r.left+r.width/2-fr.left)/k,cy:(r.top+r.height/2-fr.top)/k}}
+  var hb={t:(hub.top-fr.top)/k,b:(hub.bottom-fr.top)/k,cx:(hub.left+hub.width/2-fr.left)/k};
+  E.forEach(function(e,i){var a=R(node(e[0])),b=R(node(e[1])),d,t=e[2];
+   if(t==='hub'){d='M'+a.cx+' '+a.b+'L'+b.cx+' '+b.t}
+   else if(!mob){var x1=a.r,y1=a.cy,x2=b.l,y2=b.cy,m=(x1+x2)/2;d='M'+x1+' '+y1+'C'+m+' '+y1+' '+m+' '+y2+' '+x2+' '+y2}
+   else if(t==='in'){var y2m=hb.t-6,m2=(a.b+y2m)/2;d='M'+a.cx+' '+a.b+'C'+a.cx+' '+m2+' '+hb.cx+' '+m2+' '+hb.cx+' '+y2m}
+   else{var y1m=hb.b+6,m3=(y1m+b.t)/2;d='M'+hb.cx+' '+y1m+'C'+hb.cx+' '+m3+' '+b.cx+' '+m3+' '+b.cx+' '+b.t}
+   var p=document.createElementNS(NS,'path');p.setAttribute('d',d);p.setAttribute('class','e-'+t);p.dataset.a=e[0];p.dataset.b=e[1];svg.appendChild(p);
+   if(!RM){var c=document.createElementNS(NS,'circle');c.setAttribute('r',t==='hub'?3.5:3);c.setAttribute('fill',COL[t]);c.style.color=COL[t];c.dataset.a=e[0];c.dataset.b=e[1];var am=document.createElementNS(NS,'animateMotion');am.setAttribute('dur',(t==='hub'?1.6:2.4+(i%4)*.35)+'s');am.setAttribute('begin',(-(i*0.53)%3).toFixed(2)+'s');am.setAttribute('repeatCount','indefinite');am.setAttribute('path',d);c.appendChild(am);svg.appendChild(c)}
+  });
+  if(cur)focus(cur);
+ }
+ var cur=null;
+ function focus(id){cur=id;f.classList.add('focus');var on={};on[id]=1;
+  [].forEach.call(svg.querySelectorAll('[data-a]'),function(el){var hit=el.dataset.a===id||el.dataset.b===id;el.classList.toggle('on',hit);if(hit){on[el.dataset.a]=1;on[el.dataset.b]=1}});
+  [].forEach.call(f.querySelectorAll('.imn'),function(n){n.classList.toggle('on',!!on[n.dataset.id])})}
+ function clear(){cur=null;f.classList.remove('focus');[].forEach.call(f.querySelectorAll('.on'),function(n){n.classList.remove('on')})}
+ [].forEach.call(f.querySelectorAll('.imn'),function(n){n.addEventListener('pointerenter',function(){focus(n.dataset.id)});n.addEventListener('pointerleave',clear);n.addEventListener('focus',function(){focus(n.dataset.id)});n.addEventListener('blur',clear)});
+ draw();if(window.ResizeObserver)new ResizeObserver(draw).observe(f);addEventListener('resize',draw);if(document.fonts)document.fonts.ready.then(draw);
+ var wrap=f.closest('.imap');if(wrap){wrap.addEventListener('transitionend',draw);setTimeout(draw,1500)}
 })();
 
 /* ===== neural tool globes: rotating sphere of tools linked like neurons; drag to spin, hover to light up, legend filters ===== */
