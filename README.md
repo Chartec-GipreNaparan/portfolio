@@ -1,8 +1,8 @@
 # Gipre Naparan · Portfolio
 
-GoHighLevel & Automation Specialist · Full-Stack Developer · IT Supervisor
+AI Strategist · Software Developer · Graphic Designer
 
-- **Portfolio (live site):** https://chartec-giprenaparan.github.io/portfolio/
+- **Live site:** https://chartec-giprenaparan.github.io/portfolio/
 - **Resume:** [Gipre-Naparan-Resume.pdf](Gipre-Naparan-Resume.pdf)
 
 Contact: eurikhen20@gmail.com
