@@ -170,6 +170,18 @@ h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
 @media (max-width:720px){.aura{top:22%;width:110vw}.sonar{top:min(26vw,150px);width:140px;height:140px}.scan{height:min(118vw,560px)}.orb{font-size:11px;padding:5px 10px 5px 6px}.orb b{width:18px;height:18px;font-size:9px}.codefly{display:none}#orbs{display:none}}
 @media (prefers-reduced-motion:reduce){.orb,.codefly,#sparks,.scan,.sonar{display:none}}
 
+
+/* ===== hero: content sits low so more of Gipre shows ===== */
+@media (min-width:721px){
+ .hero{min-height:clamp(700px,96svh,960px)}
+ .hero-inner{padding-block:140px 26px}
+ .hero-grid{align-items:end}
+ .hp{padding:18px 20px}
+ .name{margin-top:14px;font-size:clamp(40px,6.4vw,96px)}
+ .herocta{margin-top:14px}
+ .scrollcue{display:none}
+}
+
 /* ===== hero: contact rail ===== */
 .rail{position:absolute;z-index:4;left:max(22px,env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:12px}
 .rail:before,.rail:after{content:"";width:1px;height:60px;background:linear-gradient(180deg,transparent,var(--gold))}
@@ -734,8 +746,8 @@ requestAnimationFrame(draw);requestAnimationFrame(frame);
 
 var orbs=$$('#orbs .orb'),sp=$('#sparks'),sx=sp.getContext('2d'),SW,SH,sparks=[],t0=performance.now();
 function sizeSparks(){var r=hero.getBoundingClientRect();SW=r.width;SH=r.height;sp.width=SW*dpr;sp.height=SH*dpr;sx.setTransform(dpr,0,0,dpr,0,0)}
-function placeCode(){var h=hero.getBoundingClientRect(),pts=[[.03,.1],[.73,.9],[.03,.9]];['cf1','cf2','cf3'].forEach(function(id,i){var el=document.getElementById(id);if(!el)return;el.style.left=(h.width*pts[i][0])+'px';el.style.top=(h.height*pts[i][1])+'px'})}
-var SPOTS=[[.13,.17],[.86,.16],[.11,.64],[.88,.62],[.21,.78],[.79,.78],[.27,.12]];
+function placeCode(){var h=hero.getBoundingClientRect(),pts=[[.03,.07],[.68,.045],[.035,.4]];['cf1','cf2','cf3'].forEach(function(id,i){var el=document.getElementById(id);if(!el)return;el.style.left=(h.width*pts[i][0])+'px';el.style.top=(h.height*pts[i][1])+'px'})}
+var SPOTS=[[.14,.14],[.86,.13],[.09,.3],[.91,.29],[.24,.24],[.76,.23],[.3,.09]];
 function surroundings(now){var h=hero.getBoundingClientRect();if(h.bottom<0)return;var m=mainImg.getBoundingClientRect();
  var cx=m.left-h.left+m.width*.5,t=(now-t0)/1000;
  orbs.forEach(function(o,i){var sp=SPOTS[i%SPOTS.length],a=t*(0.5+i*0.07)+i*1.3,x=h.width*sp[0]+Math.cos(a)*16,y=h.height*sp[1]+Math.sin(a*1.3)*11,d=(Math.sin(t*0.9+i)+1)/2;o.style.transform='translate('+(x-o.offsetWidth/2).toFixed(1)+'px,'+(y-o.offsetHeight/2).toFixed(1)+'px) scale('+(.94+.08*d).toFixed(3)+')';o.style.opacity=(.72+.28*d).toFixed(2)});
