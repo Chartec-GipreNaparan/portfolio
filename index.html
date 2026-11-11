@@ -261,6 +261,39 @@ h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
  .float-dia:before{content:"Swipe to see the full flow \2192";display:block;position:sticky;left:0;font:11px/1 var(--f-mono);letter-spacing:.08em;color:var(--gold);margin:0 0 10px}
 }
 
+
+/* ===== methodology loop ===== */
+.method{margin:120px auto 0;text-align:center;max-width:1000px}
+.mhead .tag{justify-content:center}.mhead .tag:after{content:"";width:34px;height:1px;background:var(--gold)}
+.mh{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,3.8vw,48px);color:#fff;letter-spacing:-.02em;margin:12px 0 0;line-height:1.05}
+.mh em{font-style:normal;color:var(--gold)}
+.mflow{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px;row-gap:120px;margin:40px auto 0;max-width:900px;padding:90px 0 10px}
+.mlines{position:absolute;left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0}
+.ms{grid-column:var(--c);grid-row:var(--r);position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center}
+.mi{position:relative;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;color:var(--gold);background:radial-gradient(circle at 30% 30%,#1B3D6E,#0B1F3A 70%);border:1px solid rgba(227,178,60,.55);box-shadow:0 0 0 6px rgba(227,178,60,.06),0 0 30px rgba(227,178,60,.15);animation:mglow 8.8s ease-in-out infinite;animation-delay:var(--d)}
+.mi svg{width:28px;height:28px}
+.mi b{position:absolute;top:-6px;right:-12px;font:700 11px/1 var(--f-mono);color:var(--navy);background:linear-gradient(135deg,var(--gold-hi),var(--gold));padding:5px 7px;border-radius:999px}
+@keyframes mglow{0%,14%,100%{box-shadow:0 0 0 6px rgba(227,178,60,.06),0 0 30px rgba(227,178,60,.15);border-color:rgba(227,178,60,.55)}5%{box-shadow:0 0 0 10px rgba(227,178,60,.16),0 0 60px rgba(227,178,60,.55);border-color:#FFE7A0}}
+.ms h4{margin:16px 0 6px;font-family:var(--f-display);font-size:18px;font-weight:700;color:#fff}
+.ms p{margin:0;font-size:14px;line-height:1.5;color:var(--on-navy-dim);max-width:21ch}
+.mlines .fw{fill:none;stroke:rgba(227,178,60,.75);stroke-width:1.6;stroke-dasharray:6 6;animation:mdash 1.2s linear infinite}
+.mlines .lp{fill:none;stroke:rgba(143,180,232,.8);stroke-width:1.4;stroke-dasharray:2 6;stroke-linecap:round;animation:mdash 1.6s linear infinite}
+@keyframes mdash{to{stroke-dashoffset:-24}}
+.mlines text{font:600 11.5px var(--f-mono);fill:#B9D0F2;letter-spacing:.03em;paint-order:stroke;stroke:#06122A;stroke-width:6px;stroke-linejoin:round}
+.mlines .run{fill:#FFF3C4;filter:drop-shadow(0 0 6px #E3B23C)}
+.mkey{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:44px;font:12px var(--f-mono);letter-spacing:.06em;color:var(--on-navy-dim)}
+.mkey span{display:flex;align-items:center;gap:10px}.mkey i{width:34px;height:0;border-top:2px dashed rgba(227,178,60,.8)}.mkey i.k2{border-top:2px dotted rgba(143,180,232,.9)}
+@media (max-width:720px){
+ .method{margin-top:80px}
+ .mflow{grid-template-columns:minmax(0,1fr);row-gap:58px;max-width:220px;padding:20px 0 0}
+ .ms{grid-column:1;grid-row:var(--m)}
+ .mi{width:64px;height:64px}.mi svg{width:24px;height:24px}
+ .ms h4{font-size:17px;margin-top:12px}.ms p{font-size:13.5px}
+ .mlines text{font-size:10px}
+ .mlines .run{display:none}
+}
+@media (prefers-reduced-motion:reduce){.mi,.mlines .fw,.mlines .lp{animation:none}.mlines .run{display:none}}
+
 /* ===== design shop ===== */
 .shopbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:40px;padding:10px;border-radius:16px;background:rgba(9,24,48,.5);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);z-index:5}
 .chipsf{display:flex;gap:6px;flex-wrap:wrap;min-width:0}
@@ -593,10 +626,10 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
    <a class="ab rv" data-from="right" href="#design"><span class="big">3</span><span><h3>Graphic Designer</h3><p>Posters, social posts and brand pieces</p></span><i>→</i></a>
   </div>
  </div>
- <div class="trio">
-  <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 10h32a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H22l-9 7v-7H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3z"/><path d="M14 20h20M14 26h12"/></svg></div><h3>Ask first</h3><p>Clarify early, then recommend a setup.</p></div>
-  <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l26 14-11 3-5 12z"/><path d="M25 23l10 10"/></svg></div><h3>Test before live</h3><p>Every build tested before real users.</p></div>
-  <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5l16 6v11c0 10-7 18-16 21C15 40 8 32 8 22V11z"/><path d="M17 24l5 5 9-10"/></svg></div><h3>Catch errors early</h3><p>Alerts fire before clients notice.</p></div>
+ <div class="method rv" data-from="zoom">
+  <div class="mhead"><span class="tag">How I work</span><h3 class="mh">One loop, <em>every project.</em></h3></div>
+  <div class="mflow" id="mflow"><svg class="mlines" aria-hidden="true"></svg><div class="ms" style="--c:1;--r:1;--m:1;--d:0.0s"><div class="mi"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="12" r="4"/><circle cx="38" cy="10" r="4"/><circle cx="24" cy="26" r="5"/><circle cx="10" cy="38" r="4"/><circle cx="38" cy="38" r="4"/><path d="M13 14l8 9M35 13l-8 10M13 36l8-7M35 36l-8-7"/></svg><b>01</b></div><h4>Understand</h4><p>Map the business, SOPs and goals.</p></div><div class="ms" style="--c:2;--r:1;--m:2;--d:1.1s"><div class="mi"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 10h32a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H22l-9 7v-7H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3z"/><path d="M14 20h20M14 26h12"/></svg><b>02</b></div><h4>Ask first</h4><p>Clarify gaps, then recommend a setup.</p></div><div class="ms" style="--c:3;--r:1;--m:3;--d:2.2s"><div class="mi"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="14" height="10" rx="2"/><rect x="30" y="19" width="14" height="10" rx="2"/><rect x="4" y="32" width="14" height="10" rx="2"/><path d="M18 11h6v13h6M18 37h6V24"/></svg><b>03</b></div><h4>Plan</h4><p>Design the flow, data and owners.</p></div><div class="ms" style="--c:4;--r:1;--m:4;--d:3.3s"><div class="mi"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 14L7 24l10 10M31 14l10 10-10 10M27 10l-6 28"/></svg><b>04</b></div><h4>Build</h4><p>Workflows, code or design.</p></div><div class="ms" style="--c:4;--r:2;--m:5;--d:4.4s"><div class="mi"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l26 14-11 3-5 12z"/><path d="M25 23l10 10"/></svg><b>05</b></div><h4>Test before live</h4><p>Test contacts and edge cases.</p></div><div class="ms" style="--c:3;--r:2;--m:6;--d:5.5s"><div class="mi"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M27 4L9 28h13l-3 16 20-26H26z"/></svg><b>06</b></div><h4>Launch</h4><p>Go live with the client's OK.</p></div><div class="ms" style="--c:2;--r:2;--m:7;--d:6.6s"><div class="mi"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5l16 6v11c0 10-7 18-16 21C15 40 8 32 8 22V11z"/><path d="M17 24l5 5 9-10"/></svg><b>07</b></div><h4>Catch errors early</h4><p>Alerts fire before clients notice.</p></div><div class="ms" style="--c:1;--r:2;--m:8;--d:7.7s"><div class="mi"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="6"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11.3 11.3l4.2 4.2M32.5 32.5l4.2 4.2M11.3 36.7l4.2-4.2M32.5 15.5l4.2-4.2"/><circle cx="24" cy="24" r="12"/></svg><b>08</b></div><h4>Improve</h4><p>Lessons feed the next build.</p></div></div>
+  <div class="mkey"><span><i class="k1"></i>Next step</span><span><i class="k2"></i>Goes back when needed</span></div>
  </div>
  <div class="globe-wrap gw-big rv" data-from="zoom">
   <div class="gcap"><span class="tag">Toolkit · 66 tools &amp; processes</span><span class="ghint">Drag to spin · hover to connect</span></div>
@@ -832,6 +865,35 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
 (function(){
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+
+
+/* ===== methodology loop: draws next-step arrows and return loops between the step icons ===== */
+(function(){var f=document.getElementById('mflow');if(!f)return;var svg=f.querySelector('.mlines'),NS='http://www.w3.org/2000/svg',reduceM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function el(t,a,txt){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(txt)e.textContent=txt;svg.appendChild(e);return e}
+ function draw(){
+  var W=f.offsetWidth,H=f.offsetHeight,mob=innerWidth<=720;svg.setAttribute('viewBox','0 0 '+W+' '+H);svg.innerHTML='';
+  var d=el('defs',{});d.innerHTML='<marker id="mah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#E3B23C"/></marker><marker id="mab" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8FB4E8"/></marker>';
+  var N=[].map.call(f.querySelectorAll('.ms'),function(n){var m=n.querySelector('.mi');return {cx:n.offsetLeft+m.offsetLeft+m.offsetWidth/2,cy:n.offsetTop+m.offsetTop+m.offsetHeight/2,rad:m.offsetWidth/2,top:n.offsetTop,bot:n.offsetTop+n.offsetHeight,l:n.offsetLeft,r:n.offsetLeft+n.offsetWidth}});
+  var run='';
+  for(var i=0;i<N.length-1;i++){var a=N[i],b=N[i+1],p;
+   if(Math.abs(a.cy-b.cy)<10){var s=b.cx>a.cx?1:-1;p='M'+(a.cx+s*(a.rad+12))+' '+a.cy+'L'+(b.cx-s*(b.rad+14))+' '+b.cy}
+   else p='M'+a.cx+' '+(a.bot+10)+'L'+b.cx+' '+(b.cy-b.rad-14);
+   el('path',{d:p,'class':'fw','marker-end':'url(#mah)'});run+=(i?p.replace('M','L'):p)}
+  if(!reduceM){var c=el('circle',{r:4,'class':'run'});var am=document.createElementNS(NS,'animateMotion');am.setAttribute('dur','8.8s');am.setAttribute('repeatCount','indefinite');am.setAttribute('path',run);c.appendChild(am)}
+  var L=mob?[[1,0,'unclear? ask again','R',26],[4,3,'fails? fix & retest','R',26],[6,3,'alert? fix fast','L',24],[7,0,'next project','L',48]]
+           :[[1,0,'unclear? ask again','T'],[4,3,'fails? fix & retest','R',64],[6,3,'alert? fix fast','G'],[7,0,'next project','L',64]];
+  L.forEach(function(e){var a=N[e[0]],b=N[e[1]],p,tx,ty,rot=0,k=e[3];
+   if(k==='R'||k==='L'){var s=k==='R'?1:-1,X=mob?(s>0?W+e[4]:-e[4]):a.cx+s*(a.rad+e[4]),r=14,ax=a.cx+s*(a.rad+8),bx=b.cx+s*(b.rad+14),dy=b.cy<a.cy?-1:1;
+    p='M'+ax+' '+a.cy+'L'+(X-s*r)+' '+a.cy+'Q'+X+' '+a.cy+' '+X+' '+(a.cy+dy*r)+'L'+X+' '+(b.cy-dy*r)+'Q'+X+' '+b.cy+' '+(X-s*r)+' '+b.cy+'L'+bx+' '+b.cy;
+    tx=X;ty=(a.cy+b.cy)/2;rot=s*90}
+   else if(k==='T'){var y=a.cy-a.rad-62;p='M'+a.cx+' '+(a.cy-a.rad-8)+'C'+a.cx+' '+y+' '+b.cx+' '+y+' '+b.cx+' '+(b.cy-b.rad-14);tx=(a.cx+b.cx)/2;ty=y+10}
+   else{var gy=(N[3].bot+N[4].top)/2+6,bx2=b.cx-46;p='M'+a.cx+' '+(a.cy-a.rad-8)+'C'+a.cx+' '+gy+' '+bx2+' '+gy+' '+bx2+' '+(b.bot+12);tx=(a.cx+bx2)/2;ty=gy-6}
+   el('path',{d:p,'class':'lp','marker-end':'url(#mab)'});
+   el('text',{x:tx,y:ty,'text-anchor':'middle','dominant-baseline':'middle',transform:rot?'rotate('+rot+' '+tx+' '+ty+')':''},e[2]);
+  });
+ }
+ draw();if(window.ResizeObserver)new ResizeObserver(draw).observe(f);else addEventListener('resize',draw);if(document.fonts)document.fonts.ready.then(draw);
+})();
 
 /* ===== neural tool globes: rotating sphere of tools linked like neurons; drag to spin, hover to light up, legend filters ===== */
 (function(){var reduceG=matchMedia('(prefers-reduced-motion: reduce)').matches,COL={a:[227,178,60],d:[127,178,255],g:[242,160,123]};
