@@ -398,6 +398,14 @@ h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
  .sic{width:38px;height:38px;grid-row:1/3}
 }
 
+
+.wbr.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:760px;margin:0 auto}
+.wbr.two:before{left:25%;right:25%}
+.le .wlab{background:#E86E5A}
+@media (max-width:720px){.wbr.two{grid-template-columns:minmax(0,1fr);max-width:none}}
+.wbr .t-err{border-style:solid;animation-duration:15s!important}
+.wbr .t-err[style*="wl15"]{animation-name:wl15!important}
+
 /* ===== design shop ===== */
 .shopbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:40px;padding:10px;border-radius:16px;background:rgba(9,24,48,.5);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);z-index:5}
 .chipsf{display:flex;gap:6px;flex-wrap:wrap;min-width:0}
@@ -803,22 +811,31 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
 </section>
 
 <section class="zone" id="ai-2">
- <div class="tag rv par" data-par="0.04">04 · AI Strategist</div>
- <h2 class="h rv par" data-par="0.06">Automations that <span>keep working.</span></h2>
- <p class="lede rv par" data-par="0.03">GoHighLevel workflows, CRM and integrations, with error alerts built in.</p>
- <div class="float-dia rv par" data-from="left" data-par="0.05"><svg viewBox="0 0 640 128" font-family="Inter" font-size="11">
- <defs><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0B1F3A"/></marker>
- <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#B8902A"/></marker></defs>
- <rect x="6" y="14" width="104" height="44" rx="8" fill="#F6F8FB" stroke="#E4E8EF"/><text x="58" y="41" text-anchor="middle" font-weight="700" fill="#0B1F3A">Trigger</text>
- <path d="M110 36H136" stroke="#0B1F3A" stroke-width="1.4" marker-end="url(#b)"/>
- <rect x="138" y="14" width="118" height="44" rx="8" fill="#0B1F3A"/><text x="197" y="34" text-anchor="middle" font-weight="700" fill="#fff">Actions</text><text x="197" y="49" text-anchor="middle" fill="#F2D27A" font-size="9.5">SMS · email · tag · API</text>
- <path d="M256 36H282" stroke="#0B1F3A" stroke-width="1.4" marker-end="url(#b)"/>
- <path d="M340 8L392 36L340 64L288 36Z" fill="#FBF3DC" stroke="#E3B23C"/><text x="340" y="40" text-anchor="middle" font-weight="700" fill="#0B1F3A">Worked?</text>
- <path d="M392 36H424" stroke="#0B1F3A" stroke-width="1.4" marker-end="url(#b)"/><text x="406" y="28" text-anchor="middle" font-size="9.5" fill="#1D6B3A">yes</text>
- <rect x="426" y="14" width="208" height="44" rx="8" fill="#E5F4EA" stroke="#BFE3CB"/><text x="530" y="41" text-anchor="middle" font-weight="700" fill="#1D6B3A">Continue to the next step</text>
- <path d="M340 64V92H424" stroke="#B8902A" stroke-width="1.4" fill="none" marker-end="url(#r)"/><text x="350" y="82" font-size="9.5" fill="#8A6714">no</text>
- <rect x="426" y="72" width="208" height="44" rx="8" fill="#fff" stroke="#E3B23C"/><text x="530" y="92" text-anchor="middle" font-weight="700" fill="#0B1F3A">Alert me + log the error</text><text x="530" y="107" text-anchor="middle" font-size="9.5" fill="#5B6678">fixed before it reaches the client</text>
-</svg></div>
+ <div class="center">
+  <div class="tag rv par" data-par="0.04">04 · AI Strategist</div>
+  <h2 class="h rv par" data-par="0.06">Automations that <span>keep working.</span></h2>
+  <p class="lede rv par" data-par="0.03">GoHighLevel workflows, CRM and integrations, with error alerts built in.</p>
+ </div>
+ <div class="wf rv" data-from="zoom">
+ <div class="wfbar"><span class="wdots"><i></i><i></i><i></i></span><b>New Lead Nurture · with error catcher</b><span class="wpub"><i></i>Published</span></div>
+ <div class="wfcv">
+  <div class="wmain">
+   <div class="wn t-trig" style="animation-name:wl5;animation-delay:0s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span class="wtx"><small>Trigger</small><b>Form submitted</b><em>A new lead comes in</em><span class="wchips"><span class="wch">Website form</span><span class="wch">Funnel</span><span class="wch">Survey</span><span class="wch">Calendar</span></span></span><span class="wok" aria-hidden="true"></span></div>
+   <div class="wc" aria-hidden="true"><i>+</i></div>
+   <div class="wn t-crm" style="animation-name:wl5;animation-delay:0.6s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><span class="wtx"><small>CRM</small><b>Create or update contact</b><em>Tags, source and custom fields set</em></span><span class="wok" aria-hidden="true"></span></div>
+   <div class="wc" aria-hidden="true"><i>+</i></div>
+   <div class="wn t-crm" style="animation-name:wl5;animation-delay:1.2s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="5" height="16" rx="1"/><rect x="10" y="4" width="5" height="11" rx="1"/><rect x="17" y="4" width="4" height="6" rx="1"/></svg></span><span class="wtx"><small>CRM</small><b>Add to pipeline</b><em>Stage: New lead</em></span><span class="wok" aria-hidden="true"></span></div>
+   <div class="wc" aria-hidden="true"><i>+</i></div>
+   <div class="wn t-act" style="animation-name:wl5;animation-delay:1.8s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2"/><path d="M6 17l3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06"/><path d="M12 6l3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8"/></svg></span><span class="wtx"><small>Webhook</small><b>Sync to n8n</b><em>Verified webhook · API v2</em></span><span class="wok" aria-hidden="true"></span></div>
+   <div class="wc" aria-hidden="true"><i>+</i></div>
+   <div class="wn t-if" style="animation-name:wl5;animation-delay:2.4s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 7v10M16.2 11.2C13 10 9 9 6.8 6.4M16.2 12.8C13 14 9 15 6.8 17.6"/></svg></span><span class="wtx"><small>If / else</small><b>Did every step work?</b><em>Check each response</em></span><span class="wok" aria-hidden="true"></span></div>
+  </div>
+  <div class="wbr two">
+   <div class="wl la"><span class="wlab">Yes · worked</span><div class="wn t-act" style="animation-name:wl15;animation-delay:3.0s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="wtx"><small>Message</small><b>Welcome SMS + email</b><em>Sent within a minute</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-wait" style="animation-name:wl15;animation-delay:3.6s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="wtx"><small>Wait</small><b>Wait 2 days</b><em>Unless they reply first</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-act" style="animation-name:wl15;animation-delay:4.2s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span class="wtx"><small>Message</small><b>Follow-up reminder</b><em>Friendly nudge with booking link</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-crm" style="animation-name:wl15;animation-delay:4.8s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span class="wtx"><small>CRM</small><b>Appointment booked</b><em>Stage moves, owner notified</em></span><span class="wok" aria-hidden="true"></span></div></div>
+   <div class="wl le"><span class="wlab">No · something broke</span><div class="wn t-wait" style="animation-name:wl15;animation-delay:8.0s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="wtx"><small>Wait</small><b>Retry once</b><em>Wait 5 minutes, try again</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-log" style="animation-name:wl15;animation-delay:8.6s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span><span class="wtx"><small>Log</small><b>Log the error</b><em>Step, contact and response saved</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-err" style="animation-name:wl15;animation-delay:9.2s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg></span><span class="wtx"><small>Alert</small><b>Alert me first</b><em>SMS + email to me, not the client</em></span><span class="wok" aria-hidden="true"></span></div><div class="wc" aria-hidden="true"><i>+</i></div><div class="wn t-crm" style="animation-name:wl15;animation-delay:9.8s"><span class="wic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="wtx"><small>Fix</small><b>Fixed and re-run</b><em>Before the client ever notices</em></span><span class="wok" aria-hidden="true"></span></div></div>
+  </div>
+ </div>
+</div>
  <div class="trio">
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="14" height="10" rx="2"/><rect x="30" y="19" width="14" height="10" rx="2"/><rect x="4" y="32" width="14" height="10" rx="2"/><path d="M18 11h6v13h6M18 37h6V24"/></svg></div><h3>Workflows</h3><p>Follow-ups, nurtures, reminders.</p></div>
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="24" cy="11" rx="14" ry="5"/><path d="M10 11v26c0 2.8 6.3 5 14 5s14-2.2 14-5V11M10 24c0 2.8 6.3 5 14 5s14-2.2 14-5"/></svg></div><h3>CRM setup</h3><p>Pipelines, forms, funnels, snapshots.</p></div>
