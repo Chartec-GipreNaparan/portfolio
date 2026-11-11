@@ -221,6 +221,23 @@ h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
 .tri3 small{display:block;color:var(--on-navy-dim);font-size:11.5px}
 .duo{gap:6px}
 [hidden]{display:none!important}
+
+/* ===== neural tool globe ===== */
+.globe-wrap{margin:64px auto 0;max-width:620px;display:flex;flex-direction:column;align-items:center}
+.globe-wrap.small{max-width:460px;margin-top:48px}
+.gcap{display:flex;align-items:center;justify-content:space-between;width:100%;gap:12px;margin-bottom:6px}
+.ghint{font-family:var(--f-mono);font-size:11px;color:var(--on-navy-dim);letter-spacing:.08em}
+.globe{position:relative;width:100%;aspect-ratio:1;max-width:100%;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.globe.drag{cursor:grabbing}
+.globe canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.gt{position:absolute;left:0;top:0;white-space:nowrap;font-size:13px;font-weight:600;color:#fff;padding:6px 12px 6px 9px;border-radius:999px;background:rgba(9,24,48,.62);border:1px solid rgba(227,178,60,.38);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;gap:7px;will-change:transform,opacity;transition:background .25s,color .25s,border-color .25s,box-shadow .25s;pointer-events:auto}
+.gt i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.gt.on{background:linear-gradient(135deg,#FFF1C2,#E3B23C 60%,#C8961F);color:var(--navy);border-color:transparent;box-shadow:0 0 24px rgba(227,178,60,.6)}
+.gt.on i{background:var(--navy);box-shadow:none}
+.gt.nb{border-color:rgba(255,231,160,.9);box-shadow:0 0 14px rgba(227,178,60,.35)}
+.globe-wrap.small .gt{font-size:12px;padding:5px 10px 5px 8px}
+@media (max-width:720px){.gt{font-size:11.5px;padding:5px 9px 5px 7px}.globe-wrap{margin-top:44px}}
+
 /* ===== design shop ===== */
 .shopbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:40px;padding:10px;border-radius:16px;background:rgba(9,24,48,.5);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px);z-index:5}
 .chipsf{display:flex;gap:6px;flex-wrap:wrap;min-width:0}
@@ -482,9 +499,6 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
  #sky,.glow{display:none}
 }
 </style>
-</head>
-<body>
-
 <div class="aurora" aria-hidden="true"></div>
 <canvas id="sky" aria-hidden="true"></canvas>
 <div class="glow" id="glow" aria-hidden="true"></div>
@@ -561,7 +575,10 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 6l26 14-11 3-5 12z"/><path d="M25 23l10 10"/></svg></div><h3>Test before live</h3><p>Every build tested before real users.</p></div>
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5l16 6v11c0 10-7 18-16 21C15 40 8 32 8 22V11z"/><path d="M17 24l5 5 9-10"/></svg></div><h3>Catch errors early</h3><p>Alerts fire before clients notice.</p></div>
  </div>
- <div class="cloud rv" data-from="zoom"><span class="pill">GoHighLevel</span><span class="pill">n8n</span><span class="pill">Zapier</span><span class="pill">Power Automate</span><span class="pill">ConnectWise</span><span class="pill">ClickUp</span><span class="pill">Monday.com</span><span class="pill">React</span><span class="pill">TypeScript</span><span class="pill">Next.js</span><span class="pill">Node.js</span><span class="pill">Express</span><span class="pill">PHP</span><span class="pill">MySQL</span><span class="pill">Tailwind</span><span class="pill">REST API</span><span class="pill">GitHub</span><span class="pill">VS Code</span><span class="pill">ChatGPT</span><span class="pill">Claude</span><span class="pill">Photoshop</span><span class="pill">Premiere Pro</span></div>
+ <div class="globe-wrap rv" data-from="zoom">
+  <div class="gcap"><span class="tag">Toolkit</span><span class="ghint">Drag to spin · hover a tool</span></div>
+  <div class="globe" data-tools='["GoHighLevel", "n8n", "Zapier", "Power Automate", "ConnectWise", "ClickUp", "Monday.com", "React", "TypeScript", "Next.js", "Node.js", "Express", "PHP", "MySQL", "Tailwind", "REST API", "Webhooks", "GitHub", "VS Code", "ChatGPT", "Claude", "Photoshop", "Premiere Pro", "Conversation AI"]' aria-label="Tools I use"><canvas aria-hidden="true"></canvas></div>
+ </div>
 </section>
 
 <section class="zone" id="ai">
@@ -645,7 +662,10 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="24" cy="11" rx="14" ry="5"/><path d="M10 11v26c0 2.8 6.3 5 14 5s14-2.2 14-5V11M10 24c0 2.8 6.3 5 14 5s14-2.2 14-5"/></svg></div><h3>CRM setup</h3><p>Pipelines, forms, funnels, snapshots.</p></div>
   <div class="item rv"><div class="ico"><svg class="vi " style="" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="34" r="5"/><circle cx="36" cy="34" r="5"/><circle cx="24" cy="12" r="5"/><path d="M17 34h14M21 16l-7 13M27 16l7 13"/></svg></div><h3>Integrations</h3><p>API v2 and verified webhooks.</p></div>
  </div>
- <div class="orbitals rv" data-from="right"><span class="pill">n8n</span><span class="pill">Zapier</span><span class="pill">Power Automate</span><span class="pill">ConnectWise</span><span class="pill">GHL API v2</span><span class="pill">Webhooks</span><span class="pill">ClickUp</span><span class="pill">Monday.com</span></div>
+ <div class="globe-wrap small rv" data-from="right">
+  <div class="gcap"><span class="tag">Integrations</span><span class="ghint">Drag to spin</span></div>
+  <div class="globe" data-tools='["GoHighLevel", "n8n", "Zapier", "Power Automate", "ConnectWise", "GHL API v2", "Webhooks", "ClickUp", "Monday.com", "Conversation AI", "AI Employee", "Claude"]' aria-label="Integrations I build"><canvas aria-hidden="true"></canvas></div>
+ </div>
 </section>
 
 <section class="zone" id="dev">
@@ -787,6 +807,43 @@ button.lk{font:inherit;cursor:pointer;color:#fff}
 <script>
 (function(){
 var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+
+/* ===== neural tool globes: rotating sphere of tools linked like neurons; drag to spin, hover to light up ===== */
+(function(){var reduceG=matchMedia('(prefers-reduced-motion: reduce)').matches;
+[].forEach.call(document.querySelectorAll('.globe'),function(el){
+ var tools=JSON.parse(el.dataset.tools),cv=el.querySelector('canvas'),ctx=cv.getContext('2d'),N=tools.length,dpr=Math.min(devicePixelRatio||1,2),W=0,R=0;
+ var P=tools.map(function(t,i){var y=1-(i+.5)/N*2,r=Math.sqrt(1-y*y),ph=i*Math.PI*(3-Math.sqrt(5));return {x:Math.cos(ph)*r,y:y,z:Math.sin(ph)*r,t:t}});
+ var E=[];P.forEach(function(p,i){P.map(function(q,j){return [j,(p.x-q.x)*(p.x-q.x)+(p.y-q.y)*(p.y-q.y)+(p.z-q.z)*(p.z-q.z)]}).filter(function(a){return a[0]!==i}).sort(function(a,b){return a[1]-b[1]}).slice(0,3).forEach(function(a){var j=a[0];if(!E.some(function(e){return (e[0]===i&&e[1]===j)||(e[0]===j&&e[1]===i)}))E.push([i,j,Math.random(),.35+Math.random()*.5])})});
+ var T=P.map(function(p,i){var s=document.createElement('span');s.className='gt';s.innerHTML='<i></i>'+p.t;s.addEventListener('pointerenter',function(){hov=i});s.addEventListener('pointerleave',function(){if(hov===i)hov=-1});el.appendChild(s);return s});
+ var ay=0,ax=-.35,vy=reduceG?0:.0035,vx=0,base=reduceG?0:.0035,hov=-1,drag=null,run=false,proj=[];
+ function size(){W=el.clientWidth;cv.width=W*dpr;cv.height=W*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);R=W*.37}
+ size();if(window.ResizeObserver)new ResizeObserver(size).observe(el);
+ function rot(x,y,z){var ca=Math.cos(ay),sa=Math.sin(ay),cb=Math.cos(ax),sb=Math.sin(ax);var x1=x*ca+z*sa,z1=-x*sa+z*ca;return [x1,y*cb-z1*sb,y*sb+z1*cb]}
+ function pr(v){var s=1/(1.18-v[2]*.18);return [W/2+v[0]*R*s,W/2+v[1]*R*s,v[2],s]}
+ function ring(f){ctx.beginPath();var first=true;for(var k=0;k<=72;k++){var a=k/72*Math.PI*2,v=f(a),q=pr(rot(v[0],v[1],v[2]));if(q[2]<-.15){first=true;continue}if(first){ctx.moveTo(q[0],q[1]);first=false}else ctx.lineTo(q[0],q[1])}ctx.stroke()}
+ function draw(now){
+  ctx.clearRect(0,0,W,W);var c=W/2;
+  var g=ctx.createRadialGradient(c,c,R*.2,c,c,R*1.25);g.addColorStop(0,'rgba(43,95,168,.28)');g.addColorStop(.7,'rgba(19,48,90,.12)');g.addColorStop(1,'rgba(11,31,58,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(c,c,R*1.25,0,6.283);ctx.fill();
+  ctx.strokeStyle='rgba(227,178,60,.22)';ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(c,c,R*1.08,0,6.283);ctx.stroke();
+  ctx.lineWidth=.8;ctx.strokeStyle='rgba(143,180,232,.16)';
+  for(var m=0;m<6;m++){(function(m){var lon=m/6*Math.PI;ring(function(a){return [Math.cos(lon)*Math.cos(a),Math.sin(a),Math.sin(lon)*Math.cos(a)]})})(m)}
+  [-.6,-.3,0,.3,.6].forEach(function(la){var r=Math.cos(Math.asin(la));ring(function(a){return [Math.cos(a)*r,la,Math.sin(a)*r]})});
+  proj=P.map(function(p){return pr(rot(p.x,p.y,p.z))});
+  var nbr={};if(hov>=0)E.forEach(function(e){if(e[0]===hov)nbr[e[1]]=1;if(e[1]===hov)nbr[e[0]]=1});
+  E.forEach(function(e){var a=proj[e[0]],b=proj[e[1]],d=(a[2]+b[2]+2)/4,lit=hov>=0&&(e[0]===hov||e[1]===hov);
+   ctx.strokeStyle=lit?'rgba(255,231,160,.95)':'rgba(227,178,60,'+(.08+.42*d)+')';ctx.lineWidth=lit?2:1;ctx.beginPath();var mx=(a[0]+b[0])/2+(c-(a[0]+b[0])/2)*.08,my=(a[1]+b[1])/2+(c-(a[1]+b[1])/2)*.08;ctx.moveTo(a[0],a[1]);ctx.quadraticCurveTo(mx,my,b[0],b[1]);ctx.stroke();
+   if(!reduceG){var t=((now||0)*.00025*e[3]+e[2])%1,u=1-t,px=u*u*a[0]+2*u*t*mx+t*t*b[0],py=u*u*a[1]+2*u*t*my+t*t*b[1];ctx.fillStyle=lit?'#FFF3C4':'rgba(255,231,160,'+(.25+.75*d)+')';ctx.shadowColor='#E3B23C';ctx.shadowBlur=lit?14:8;ctx.beginPath();ctx.arc(px,py,lit?3.2:2.2,0,6.283);ctx.fill();ctx.shadowBlur=0}});
+  proj.forEach(function(q){var d=(q[2]+1)/2;ctx.fillStyle='rgba(242,210,122,'+(.3+.7*d)+')';ctx.beginPath();ctx.arc(q[0],q[1],2+2*d,0,6.283);ctx.fill()});
+  T.forEach(function(s,i){var q=proj[i],d=(q[2]+1)/2;s.style.transform='translate('+(q[0]).toFixed(1)+'px,'+(q[1]).toFixed(1)+'px) translate(-50%,-50%) scale('+(.62+.42*d*q[3]/1.1).toFixed(3)+')';s.style.opacity=(i===hov?1:.18+.82*d).toFixed(2);s.style.zIndex=Math.round(d*100);s.classList.toggle('on',i===hov);s.classList.toggle('nb',!!nbr[i]);});
+ }
+ function loop(now){if(!run)return;if(!drag){if(hov<0){ay+=vy;ax+=vx}vy+=(base-vy)*.02;vx*=.95;ax+=(-.35-ax)*.01}draw(now);requestAnimationFrame(loop)}
+ el.addEventListener('pointerdown',function(e){drag={x:e.clientX,y:e.clientY,t:performance.now()};el.classList.add('drag');try{el.setPointerCapture(e.pointerId)}catch(_){}});
+ el.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-drag.x,dy=e.clientY-drag.y;ay+=dx*.006;ax+=dy*.006;ax=Math.max(-1.2,Math.min(1.2,ax));vy=dx*.0012;vx=dy*.0008;drag.x=e.clientX;drag.y=e.clientY;if(reduceG)draw(0)});
+ function up(){drag=null;el.classList.remove('drag')}el.addEventListener('pointerup',up);el.addEventListener('pointercancel',up);
+ if('IntersectionObserver' in window){new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!run){run=true;requestAnimationFrame(loop)}else if(!v)run=false}).observe(el)}else{run=true;requestAnimationFrame(loop)}
+ draw(0);
+});})();
 
 /* ===== design shop: filter, sort, load more, lightbox ===== */
 (function(){var grid=document.getElementById('pgrid');if(!grid)return;var cards=[].slice.call(grid.children),F=JSON.parse(document.getElementById('dfull').textContent),filt='all',shown=12,vis=[];
